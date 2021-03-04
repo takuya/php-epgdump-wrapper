@@ -1,11 +1,24 @@
 {
     "name": "takuya/php-epgdump-wrapper",
+    "description": "epgdump php wrapper class for method chaining to add options.",
+    "type": "library",
+    "homepage": "https://github.com/takuya/php-epgdump-wrapper",
+    "license": "GPL-3.0-or-later",
+    "version": "0.1",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "takuya",
-            "email": "takuya.1st@gmail.com"
+            "email": "takuya.1stnospam+nospam@gmail.com"
         }
     ],
+    "keywords": [
+        "recpt1",
+        "epgdump",
+        "command",
+        "pipe"
+    ],
+
     "autoload": {
         "psr-4": {
             "RecorderUtil\\": "src"
