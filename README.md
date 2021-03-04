@@ -42,7 +42,7 @@ ssh経由で
 recpt1 の出力をそのまま使う。
 ```php
 <?php
-    $proc1 = new Process('ssh s0 recpt1 --b25 --strip 101 5 -');
+    $proc1 = new Process('ssh 192.168.10.5 recpt1 --b25 --strip 101 5 -');
     [$p1_out, $p1_eror] = $proc1->start();
     
     $epgdump = new Epgdump('ssh 192.168.10.5 epgdump');
