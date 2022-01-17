@@ -8,16 +8,16 @@ use Tests\TestCase;
 use RecorderUtil\Epgdump;
 use SystemUtil\Process;
 use RecorderUtil\Recpt1;
-use RecorderUtil\EpgdumpXmlParser;
+use \Takuya\RecorderUtil\EpgDumpXML\EpgDumpXmlParser;
 
 class EpgdumpXmlParserTest extends TestCase {
   
   public function test_epgdump_xml_parse () {
     $xml = __DIR__.'/test-data/epgdump-sample.xml';
-    $parser = new EpgdumpXmlParser($xml);
+    $parser = new EpgDumpXmlParser($xml);
     $parser->open($xml);
     $parser->open(fopen($xml,'r'));
-    $list = $parser->programme();
+    $list = $parser->programmes();
     $this->assertEquals(61 ,sizeof($list));
   }
   public function test_epgdump_stream_parse(){
@@ -32,7 +32,7 @@ class EpgdumpXmlParserTest extends TestCase {
             ->wait();
     $out = $epgdump->getProcess()->getOutputStream();
     $parser = new EpgdumpXmlParser($out);
-    $list = $parser->programme();
+    $list = $parser->programmes();
     $this->assertEquals(61 ,sizeof($list));
   }
 }
